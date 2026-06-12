@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Checkout for your coding course.">
+    <title>Faraone Code Courses | Contact</title>
+    <link rel="stylesheet" href="css/global.css"> <!-- Shared styles (includes form styles) -->
+    <link rel="stylesheet" href="css/checkout.css"> <!-- Checkout-page-only styles -->
+</head>
+<body>
+    <header class="site-header">
+         <a class="logo" href="index.html">
+            <img src="img/logo.png" alt="Faraone Code Courses" height="35" width="35">
+            <span>Faraone Code Courses</span>
+        </a>
+
+        <!-- MOBILE MENU TOGGLE: shown on mobile only; desktop/tablet keep the normal navigation visible -->
+        <input class="menu-toggle" type="checkbox" id="menu-toggle" aria-label="Togglenavigation menu">
+        
+        <label class="menu-button" for="menu-toggle">
+            <img src="img/logo.png" alt="" aria-hidden="true">
+            <span>Menu</span>
+        </label>
+        
+        <nav aria-label="Primary">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="products.html">Courses</a>
+            <a class="active" href="checkout.html">Checkout</a> <!-- Active = current page-->
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- PAGE INTRO -->
+        <section>
+            <h1 style="text-align: center;">----------------- Checkout -----------------</h1>
+            <p>Fill in your details and hit Submit.</p>
+        </section>
+
+        <!-- CHECKOUT FORM -->
+        <section>
+        <form action="#" method="post">
+        <!-- action="#" means no server; method="post" sends data in request body -->
+
+        <!-- FIELDSET 1: Account details -->
+        <fieldset>
+            <legend>Username/Password</legend> <!-- Fieldset title -->
+            <div class="form-grid">
+
+                <div class="field-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="e.g. John Smith" required>
+                </div>
+
+                <div class="field-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
+                </div>
+
+                <div class="field-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                    <!-- type="password" hides characters as typed -->
+                </div>
+
+                <div class="field-group">
+                    <label for="confirm_password">Confirm Password</label>
+                    <input type="password" id="confirm_password" name="confirm_password" required>
+                </div>
+
+            </div>
+        </fieldset>
+
+        <!-- FIELDSET 2: Personal details -->
+        <fieldset>
+            <legend>Personal Details</legend>
+            <div class="form-grid">
+
+                <div class="field-group">
+                    <label for="first_name">First Name</label>
+                    <input type="text" id="first_name" name="first_name" required>
+                </div>
+
+                <div class="field-group">
+                    <label for="last_name">Last Name</label>
+                    <input type="text" id="last_name" name="last_name" required>
+                </div>
+
+                <div class="field-group full"> <!-- full = span both columns -->
+                    <span>Gender</span> <!-- span used here instead of label (no paired input) -->
+
+                    <div class="inline-options"> <!-- Styled in checkout.css: flexbox row -->
+                        <!-- Radio buttons: same name= means only one can be selected -->
+                        <label><input type="radio" name="gender" value="male" required>Male</label>
+                        <label><input type="radio" name="gender" value="female">Female</label>
+                        <label><input type="radio" name="gender" value="other">Other</label>
+                    </div>
+                </div>
+
+            </div>
+        </fieldset>
+
+        <!-- FIELDSET 3: Shipping address -->
+        <fieldset>
+            <legend>Shipping Address</legend>
+                <div class="form-grid">
+                    <div class="field-group full">
+                        <label for="street">Street Address</label>
+                        <input type="text" id="street" name="street" required>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="suburb">Suburb</label>
+                        <input type="text" id="suburb" name="suburb" required>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="postcode">Postcode</label>
+                        <input type="text" id="postcode" name="postcode" pattern="[0-9]{4}" placeholder="4 digits" required>
+                        <!-- pattern validates exactly 4 digits before submission -->
+                    </div>
+
+                    <div class="field-group">
+                        <label for="state">State</label>
+                        <select id="state" name="state" required> <!-- Dropdown list -->
+                            <option value="">Select state…</option> <!-- Empty value = nothing selected -->
+                            <option value="VIC">VIC</option>
+                            <option value="NSW">NSW</option>
+                            <option value="QLD">QLD</option>
+                            <option value="WA">WA</option>
+                            <option value="SA">SA</option>
+                            <option value="TAS">TAS</option>
+                            <option value="NT">NT</option>
+                        </select>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                        <!-- type="tel" shows number keypad on mobile -->
+                    </div>
+
+                    <div class="field-group full">
+                        <label for="order_notes">Order Notes (optional)</label>
+                        <textarea id="order_notes" name="order_notes" placeholder="e.g. Please place behind the pillar out the front."></textarea>
+                        <!-- No required attribute = field is optional -->
+                    </div>
+                </div>
+        </fieldset>
+
+        <div class="actions">
+            <button type="submit">Transmit Order</button> <!-- Validates then submits -->
+            <button type="reset">Abort Mission</button> <!-- Clears all fields -->
+        </div>
+        
+        </form>
+        </section>
+    </main>
+
+    <!-- FOOTER: site info at the bottom of every page -->
+    <footer>
+        <p>&copy; 2026 Faraone Code Course &mdash; Code Enthusiast Courses</p>
+        <p>This is an educational site to provide information and give help to people wanting to learn to code. This is not directly linked to the creators of the documantaion for any language but will contain information from them</p>
+    </footer>
+
+</body>
+</html>
